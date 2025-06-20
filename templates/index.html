@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="particles"></div>
+    <div class="container">
+        <header>
+            <h1 class="animate__animated animate__fadeInDown">🎯 Sudoku Vision</h1>
+            <p class="subtitle animate__animated animate__fadeInUp">Watch the algorithm solve puzzles in real-time!</p>
+        </header>
+        
+        <div class="game-area">
+            <div class="control-panel neon-border">
+                <div class="difficulty-selector">
+                    <button class="difficulty-btn easy pulsate" data-difficulty="easy">
+                        <span class="emoji">😊</span> Easy
+                    </button>
+                    <button class="difficulty-btn medium pulsate" data-difficulty="medium">
+                        <span class="emoji">🤔</span> Medium
+                    </button>
+                    <button class="difficulty-btn hard pulsate" data-difficulty="hard">
+                        <span class="emoji">🧠</span> Hard
+                    </button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="solve-btn" class="action-btn solve rainbow-hover">
+                        <span class="emoji">🌀</span> Visual Solve
+                    </button>
+                    <button id="hint-btn" class="action-btn hint">
+                        <span class="emoji">💡</span> Hint
+                    </button>
+                    <button id="reset-btn" class="action-btn reset">
+                        <span class="emoji">↻</span> Reset
+                    </button>
+                </div>
+                
+                <div class="speed-control">
+                    <div class="speed-label">Animation Speed:</div>
+                    <input type="range" id="speed-slider" min="0" max="200" value="50">
+                </div>
+            </div>
+
+            <div class="sudoku-container floating">
+                <table id="sudoku-board"></table>
+                <div class="solving-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="steps-count">0</div>
+                        <div class="stat-label">Steps</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="backtracks-count">0</div>
+                        <div class="stat-label">Backtracks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="custom-board">
+            <h2>Create Your Own Puzzle</h2>
+            <p>Enter numbers below and watch the solver work its magic!</p>
+            <div class="custom-controls">
+                <button id="clear-btn" class="btn-clear">
+                    <span class="emoji">🧹</span> Clear Board
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confetti-canvas"></canvas>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
